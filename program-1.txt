@@ -1,0 +1,40 @@
+PROBLEM 1:
+
+import java.util.Scanner;
+public class Main{
+    public static double Calculator(double a, double b, String op) {
+        switch (op) {
+            case "+":
+                return a + b;
+            case "-":
+                return a - b;
+            case "*":
+                return a * b;
+            case "/":
+                if (b != 0) {
+                    return a / b;
+                } else {
+                    System.out.println("NOT POSSIBLE");
+                    
+                }
+            default:
+                System.out.println("INVALID OPERATION");
+                return Double.NaN;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter a:");
+        double a = sc.nextDouble();
+
+        System.out.println("enter b:");
+        double b = sc.nextDouble();
+
+        System.out.println("enter the operation:");
+        String op = sc.next();
+        double result = Calculator(a, b, op);
+            System.out.println("The result is: " + result);
+    }
+}
